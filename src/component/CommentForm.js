@@ -5,10 +5,10 @@ const CommentForm = ({setComments}) => {
     const [text,setText] = useState("")
   const [checked,setChecked] = useState(false)
 
-  // const addComments = ()=>{
-  //   setComments((prev)=>[...prev,{id:Date.now(),text:text}])
-  //   setText("")
-  // }
+  const addComments = ()=>{
+    setComments((prev)=>[...prev,{id:Date.now(),text:text}])
+    setText("")
+  }
 
   const postComment = async ()=>{
     const res =  await fetch('http://localhost:5000/addcomment',{
@@ -44,7 +44,7 @@ const CommentForm = ({setComments}) => {
         </label>
        <button 
         disabled={!checked || !text} 
-        onClick={postComment}
+        onClick={addComments}
        >
          comment
        </button>

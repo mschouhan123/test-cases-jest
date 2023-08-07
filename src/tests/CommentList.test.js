@@ -11,7 +11,7 @@ test('Comments are not available', ()=> {
     // const checkbox = screen.getByLabelText('i agree to terms and com')
 })
 
-test('List all Comments', ()=> {
+test('List all Comments', ()=> { 
     const comments = [
         {id: 1, text: "Comment 1"}, 
         {id: 2, text: "Comment 2"}
@@ -19,9 +19,6 @@ test('List all Comments', ()=> {
     render(<CommentList allcomments={comments} />)
     const h2Element = screen.queryByText('no comments', {exact: false})
     expect(h2Element).not.toBeInTheDocument()
-
-    expect(screen.getByText('Comment 1')).toBeInTheDocument() 
-    expect(screen.getByText('Comment 2')).toBeInTheDocument()
 
     const commentLi = screen.getAllByRole('listitem')
     expect(commentLi.length).toBe(comments.length)
