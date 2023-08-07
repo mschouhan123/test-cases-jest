@@ -1,23 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
-
+import CommentForm from './component/CommentForm';
+import CommetList from './component/CommentList';
 function App() {
+  const comments = [];
+//     const comments = [
+//     {id: 1, text: "nice pic"}, 
+//     {id: 2, text: "comment List"}
+// ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <CommentForm />
+      <CommetList allcomments={comments}/>
     </div>
   );
 }
